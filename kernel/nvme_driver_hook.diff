@@ -160,7 +160,7 @@ index d4b1ff747123..ed1dbb010552 100644
  	trace_nvme_sq(req, cqe->sq_head, nvmeq->sq_tail);
 -	nvme_end_request(req, cqe->status, cqe->result);
 +
-+	if (!req->bio || req->bio->_bpf_level == 0) { //app의 I/O요청이 아닌
++	if (!req->bio || req->bio->_bpf_level == 0) { //app의 I/O요청이 아닌 경우
 +		nvme_end_request(req, cqe->status, cqe->result);
 +	} else {
 +		++req->bio->_bpf_count;
