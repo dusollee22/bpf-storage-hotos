@@ -82,8 +82,8 @@ index d4b1ff747123..ed1dbb010552 100644
 +	spin_unlock_irqrestore(&nvmeq->sq_lock, flags);
  }
  
- static void nvme_commit_rqs(struct blk_mq_hw_ctx *hctx)
-@@ -860,9 +863,23 @@ static blk_status_t nvme_queue_rq(struct blk_mq_hw_ctx *hctx,
+ static void nvme_commit_rqs(struct blk_mq_hw_ctx *hctx) 
+@@ -860,9 +863,23 @@ static blk_status_t nvme_queue_rq(struct blk_mq_hw_ctx *hctx, //nvme_queue_rq() -> nvme_submit_cmd()
  	struct nvme_dev *dev = nvmeq->dev;
  	struct request *req = bd->rq;
  	struct nvme_iod *iod = blk_mq_rq_to_pdu(req);
