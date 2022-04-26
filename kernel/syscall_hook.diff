@@ -181,7 +181,7 @@ index a18ae82a298a..53e695703b57 100644
  #endif
  
 +BPF_PROG_TYPE(BPF_PROG_TYPE_STORAGE, storage,
-+              struct bpf_storage, struct bpf_storage_kern)
++              struct bpf_storage, struct bpf_storage_kern) // 'storage' + verifier_ops (storage_verifier_ops)  is defined above [doodu]
 +
  BPF_MAP_TYPE(BPF_MAP_TYPE_ARRAY, array_map_ops)
  BPF_MAP_TYPE(BPF_MAP_TYPE_PERCPU_ARRAY, percpu_array_map_ops)
