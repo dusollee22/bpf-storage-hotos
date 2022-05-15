@@ -17,7 +17,7 @@ __u32 main_func(struct bpf_storage *context) {
     int i = 0;
     #pragma unroll
     for (i = 0; i < (512 / sizeof(long)); ++i) {
-        memcpy(&number, &context->data[i * sizeof(long)], sizeof(long));
+        memcpy(&number, &context->data[i * sizeof(long)], sizeof(long)); //simulating parsing the page to find the next pointer (doodu)
     }
     return 0;
 }
